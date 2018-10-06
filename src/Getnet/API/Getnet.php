@@ -17,7 +17,7 @@ class Getnet
     /**
      * @var bool
      */
-    public $debug = true;
+    public $debug = false;
     /**
      * @var Request
      */
