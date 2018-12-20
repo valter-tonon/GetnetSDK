@@ -62,7 +62,7 @@ class Transaction
     public function Debit($brand)
     {
 
-        $debit = new Debit($brand);
+        $debit = new Credit($brand);
         $this->setDebit($debit);
 
         return $debit;

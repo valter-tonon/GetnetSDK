@@ -13,7 +13,7 @@ $transaction->setSellerId("1955a180-2fa5-4b65-8790-2ba4182a94cb");
 $transaction->setCurrency("BRL");
 $transaction->setAmount("1000");
 
-$card = new Token("5155901222280001", "customer_21081826", $getnet);
+$card = new Token("4012001037141112", "customer_21081826", $getnet);
 $transaction->Debit("")
     ->setAuthenticated(false)
     ->setDynamicMcc("1799")
@@ -95,8 +95,10 @@ curl_setopt_array($curl, array(
 ));
 $response_curl = curl_exec($curl);
 curl_close($curl);
-$word = explode("VALUE=", $response_curl);
-$payer_authentication_response = trim(str_replace(' escapeXml="false"/>', "", strip_tags($word[1])));
+
+
+// DEVERÁ SER COLETADO - demo abaixo
+$payer_authentication_response = "im2qu4ap639nl9lof2pobdh8q8jm99nb3zbu1gc5kj8o2vftnp9488tjn2e2r3qlgqd8qevggbds7on81c9r496v1sobmnxip0zrecdgezm6omfd94sn11y6sv2rpicb9g75p7g51esccfxc13ng1jcglv4rr52000z5zt12o9r5nl6l36amnvdplb9an1a0d0tg2qxwdb0bpg6dqrsll8snj7k64wpkx1kpztktgzhogpi9qyryej3ib6uyaovdnu3c0jnoa6yd4ljnwhbjsle9a47e800k4ln269kw5puhucxnch0dfc8u9969o9nweukgvxfe393zuhlwnwmaamrm8xxfyoad95419wqe2ejtezpvseaky7vppm68x7yvf182oc0xh93stpbst73dh64klc54mzuke9n9u3qgisi1s8ps3c2royvup6d065nebc1fxzmqjjnyty2d6q5wbbmetgco8lm3rrjvi8jtc0nmsp4k9c9x";
 ###############################################################
 
 //CONFIRMAR O PAGAMENTO COM payer_authentication_response recibo na URL de Noficação
