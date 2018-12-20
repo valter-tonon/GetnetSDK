@@ -57,12 +57,12 @@ class Transaction
 
     /**
      * @param $brand
-     * @return Credit
+     * @return Debit
      */
     public function Debit($brand)
     {
 
-        $debit = new Credit($brand);
+        $debit = new Debit($brand);
         $this->setDebit($debit);
 
         return $debit;
