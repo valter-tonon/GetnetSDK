@@ -1,13 +1,7 @@
 <?php
 namespace Getnet\API;
-    /**
-     * Created by PhpStorm.
-     * User: brunopaz
-     * Date: 09/07/2018
-     * Time: 01:47
-     */
 /**
- * Class Credit
+ * Class Debit
  * @package Getnet\API
  */
 class Debit implements \JsonSerializable
@@ -71,7 +65,7 @@ class Debit implements \JsonSerializable
 
     /**
      * @param mixed $dynamic_mcc
-     * @return Credit
+     * @return Debit
      */
     public function setDynamicMcc($dynamic_mcc)
     {
@@ -90,7 +84,7 @@ class Debit implements \JsonSerializable
 
     /**
      * @param mixed $soft_descriptor
-     * @return Credit
+     * @return Debit
      */
     public function setSoftDescriptor($soft_descriptor)
     {
