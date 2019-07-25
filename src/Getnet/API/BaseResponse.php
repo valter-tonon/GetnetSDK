@@ -249,7 +249,7 @@ class BaseResponse implements \JsonSerializable
             $this->status = "ERROR";
         } elseif ($this->status_code == 500) {
             $this->status = "ERROR";
-        } elseif (isset($this->redirect_url)) {
+        } elseif ($this->status_code == 1) {
             $this->status = "PENDING";
         } elseif (isset($this->status_label)) {
             $this->status = $this->status_label;
