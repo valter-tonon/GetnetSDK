@@ -46,6 +46,10 @@ class BaseResponse implements \JsonSerializable
     /**
      * @var
      */
+    public $message;
+    /**
+     * @var
+     */
     public $error_message;
     /**
      * @var
@@ -59,6 +63,10 @@ class BaseResponse implements \JsonSerializable
      * @var
      */
     public $status_code;
+    /**
+     * @var
+     */
+    public $error_code;
     /**
      * @var
      */
@@ -314,5 +322,33 @@ class BaseResponse implements \JsonSerializable
     public function setResponseJSON($array)
     {
         $this->responseJSON = json_encode($array, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getErrorCode() {
+        return $this->error_code;
+    }
+
+    /**
+     * @param mixed $error_code
+     */
+    public function setErrorCode($error_code): void {
+        $this->error_code = $error_code;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessage() {
+        return $this->message;
+    }
+
+    /**
+     * @param mixed $message
+     */
+    public function setMessage($message): void {
+        $this->message = $message;
     }
 }
