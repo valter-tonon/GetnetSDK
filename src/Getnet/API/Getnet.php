@@ -50,8 +50,11 @@ class Getnet
 
         $request = new Request($this);
 
-        return $request->auth($this);
-
+        try{
+            return $request->auth($this);
+        }catch (\Exception $exception){
+            return false;
+        }
 
     }
 
@@ -248,6 +251,30 @@ class Getnet
         $boletoresponse->setBaseUrl($request->getBaseUrl());
 
         return $boletoresponse;
+    }
+    
+     /**
+     * @param $org_id
+     * @param $session_id
+     *
+     * @return bool|string
+     * Capturando Device Fingerprint em aplicação/serviço Backend:
+     * Em arquiteturas que o transação é realizada atraves de uma aplicação backend, é recomendado carregar a URL de captura no servidor onde o pagamento será processado (antes de enviar a transação).
+     *
+     * Para isso, é recomendado através do comando "CURL" fazer uma chamada GET na URL de Captura conforme exemplo abaixo:
+     */
+    public function SessionId($org_id, $session_id)
+    {
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://h.online-metrix.net/fp/tags.js?org_id=" . $org_id . "&session_id=" . $session_id);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.54.0');
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return $session_id;
     }
 }
 
