@@ -104,7 +104,12 @@ class Token
         $data = array("card_number" => $this->card_number, "customer_id" => $this->customer_id);
 
         $request = new Request($credencial);
-        $response = $request->post($credencial, "/v1/tokens/card", json_encode($data));
+        try{
+            $response = $request->post($credencial, "/v1/tokens/card", json_encode($data));
+        }catch (\Exception $exception){
+            return false;
+        }
+
         $this->number_token = $response["number_token"];
 
         return $this;
