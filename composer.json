@@ -1,5 +1,5 @@
 {
-  "name": "idealizetecnologia/getnet-sdk",
+  "name": "valter-tonon/getnet-sdk",
   "description": "SDK da plataforma digital da GETNET",
   "minimum-stability": "stable",
   "require": {
