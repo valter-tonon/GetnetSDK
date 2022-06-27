@@ -1,5 +1,5 @@
 {
-  "name": "brunopazz/getnet-sdk",
+  "name": "idealizetecnologia/getnet-sdk",
   "description": "SDK da plataforma digital da GETNET",
   "minimum-stability": "stable",
   "require": {
@@ -13,8 +13,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Bruno Paz",
-      "email": "brunopaz@azpay.com.br"
+      "name": "Bruno Paz"
     }
   ]
 }
